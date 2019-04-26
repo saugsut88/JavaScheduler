@@ -226,8 +226,8 @@ public class EventsManager {
 
 	public static Event getEvent(CalendarDate date, int hh, int mm) {
 		Day d = getDay(date);
-		if (d == null)
-			return null;
+		//if (d == null) // T1-E
+		//	return null; //Assign 7 task 1 Cyclomatic Complexity // T1-E
 		Elements els = d.getElement().getChildElements("event");
 		for (int i = 0; i < els.size(); i++) {
 			Element el = els.get(i);
@@ -242,7 +242,7 @@ public class EventsManager {
 
 	public static void removeEvent(CalendarDate date, int hh, int mm) {
 		Day d = getDay(date);
-		if (d == null)
+		//if (d == null) // T1-E
 			d.getElement().removeChild(getEvent(date, hh, mm).getContent());
 	}
 
@@ -253,13 +253,13 @@ public class EventsManager {
 
 	private static Day createDay(CalendarDate date) {
 		Year y = getYear(date.getYear());
-		if (y == null)
+		//if (y == null) // T1-E
 			y = createYear(date.getYear());
 		Month m = y.getMonth(date.getMonth());
-		if (m == null)
+		//if (m == null) // T1-E
 			m = y.createMonth(date.getMonth());
 		Day d = m.getDay(date.getDay());
-		if (d == null)
+		//if (d == null) // T1-E
 			d = m.createDay(date.getDay());
 		return d;
 	}
@@ -283,11 +283,11 @@ public class EventsManager {
 
 	private static Day getDay(CalendarDate date) {
 		Year y = getYear(date.getYear());
-		if (y == null)
-			return null;
+		//if (y == null)
+			//return null;
 		Month m = y.getMonth(date.getMonth());
-		if (m == null)
-			return null;
+		//if (m == null)
+			//return null;
 		return m.getDay(date.getDay());
 	}
 
@@ -347,8 +347,8 @@ public class EventsManager {
 		}
 
 		public Day getDay(int d) {
-			if (mElement == null)
-				return null;
+			//if (mElement == null) // T1-E
+				//return null; // T1-E
 			Elements ds = mElement.getChildElements("day");
 			String dd = new Integer(d).toString();
 			for (int i = 0; i < ds.size(); i++)
@@ -379,8 +379,8 @@ public class EventsManager {
 		}
 
 		public Vector getDays() {
-			if (mElement == null)
-				return null;
+			//if (mElement == null) // T1-E
+				//return null; // T1-E
 			Vector v = new Vector();
 			Elements ds = mElement.getChildElements("day");
 			for (int i = 0; i < ds.size(); i++)
