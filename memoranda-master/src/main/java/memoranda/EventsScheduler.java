@@ -14,7 +14,7 @@ import java.util.TimerTask;
 import java.util.Vector;
 
 import main.java.memoranda.interfaces.IEvent;
-import main.java.memoranda.interfaces.IEventNotificationListener;
+//import main.java.memoranda.interfaces.IEventNotificationListener;
 
 //TASK 3-2 SMELL BETWEEN CLASSES
 //Code Smells
@@ -34,7 +34,7 @@ public class EventsScheduler {
     static Timer changeDateTimer = new Timer();
 
     static {
-        addListener(new DefaultEventNotifier());            
+        new DefaultEventNotifier();            
     }
 
     public static void init() {
@@ -92,7 +92,7 @@ public class EventsScheduler {
     }
             
 
-    public static void addListener(IEventNotificationListener enl) {
+    public static void addListener(DefaultEventNotifier enl) {
         _listeners.add(enl);
     }
 

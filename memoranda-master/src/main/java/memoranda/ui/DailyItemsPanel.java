@@ -24,13 +24,14 @@ import javax.swing.border.Border;
 
 import main.java.memoranda.CurrentNote;
 import main.java.memoranda.CurrentProject;
+import main.java.memoranda.DefaultEventNotifier;
 import main.java.memoranda.EventsScheduler;
 import main.java.memoranda.History;
 import main.java.memoranda.HistoryItem;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
 import main.java.memoranda.date.IDateListener;
-import main.java.memoranda.interfaces.IEventNotificationListener;
+//import main.java.memoranda.interfaces.IEventNotificationListener;
 import main.java.memoranda.interfaces.IHistoryListener;
 import main.java.memoranda.interfaces.INote;
 import main.java.memoranda.interfaces.INoteList;
@@ -279,7 +280,7 @@ public class DailyItemsPanel extends JPanel {
             }
         });
 
-        EventsScheduler.addListener(new IEventNotificationListener() {
+        EventsScheduler.addListener(new DefaultEventNotifier() {
             public void eventIsOccured(main.java.memoranda.interfaces.IEvent ev) {
                 /*DEBUG*/
                 System.out.println(ev.getTimeString() + " " + ev.getText());

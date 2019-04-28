@@ -8,7 +8,7 @@
 package main.java.memoranda;
 
 import main.java.memoranda.interfaces.IEvent;
-import main.java.memoranda.interfaces.IEventNotificationListener;
+//import main.java.memoranda.interfaces.IEventNotificationListener;
 import main.java.memoranda.ui.EventNotificationDialog;
 
 //TASK 3-2 SMELL BETWEEN CLASSES
@@ -21,7 +21,7 @@ import main.java.memoranda.ui.EventNotificationDialog;
  *  
  */
 /*$Id: DefaultEventNotifier.java,v 1.4 2004/01/30 12:17:41 alexeya Exp $*/
-public class DefaultEventNotifier implements IEventNotificationListener {
+public class DefaultEventNotifier {
 
 	/**
 	 * Constructor for DefaultEventNotifier.

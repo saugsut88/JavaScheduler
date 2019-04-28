@@ -20,6 +20,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 import main.java.memoranda.CurrentProject;
+import main.java.memoranda.DefaultEventNotifier;
 import main.java.memoranda.EventsManager;
 import main.java.memoranda.EventsScheduler;
 import main.java.memoranda.History;
@@ -27,7 +28,7 @@ import main.java.memoranda.ProjectManager;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
 import main.java.memoranda.date.IDateListener;
-import main.java.memoranda.interfaces.IEventNotificationListener;
+//import main.java.memoranda.interfaces.IEventNotificationListener;
 import main.java.memoranda.interfaces.INoteList;
 import main.java.memoranda.interfaces.IProject;
 import main.java.memoranda.interfaces.IProjectListener;
@@ -261,7 +262,7 @@ public class AgendaPanel extends JPanel {
 				if (isActive)
 					refresh(CurrentDate.get());
 			}});
-		EventsScheduler.addListener(new IEventNotificationListener() {
+		EventsScheduler.addListener(new DefaultEventNotifier() {
 			public void eventIsOccured(main.java.memoranda.interfaces.IEvent ev) {
 				if (isActive)
 					refresh(CurrentDate.get());
