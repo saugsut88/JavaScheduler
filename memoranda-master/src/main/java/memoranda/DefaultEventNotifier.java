@@ -11,6 +11,12 @@ import main.java.memoranda.interfaces.IEvent;
 import main.java.memoranda.interfaces.IEventNotificationListener;
 import main.java.memoranda.ui.EventNotificationDialog;
 
+//TASK 3-2 SMELL BETWEEN CLASSES
+//Code Smells
+//lazy class
+//to fix implament this in the next relevant class 
+
+
 /**
  *  
  */

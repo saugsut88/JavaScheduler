@@ -8,14 +8,21 @@
  */
 package main.java.memoranda.interfaces;
 
+//TASK 3-2 SMELL BETWEEN CLASSES
+//Code Smells
+//lazy class
+//to fix implament this in the next relevant class 
+
+
+
 /**
  * 
  */
 /*$Id: EventNotificationListener.java,v 1.2 2004/01/30 12:17:41 alexeya Exp $*/
 public interface IEventNotificationListener {
 
-    void eventIsOccured(IEvent ev);
+   // void eventIsOccured(IEvent ev);
     
-    void eventsChanged();
+   // void eventsChanged();
 
 }

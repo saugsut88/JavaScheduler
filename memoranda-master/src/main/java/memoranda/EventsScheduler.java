@@ -16,6 +16,12 @@ import java.util.Vector;
 import main.java.memoranda.interfaces.IEvent;
 import main.java.memoranda.interfaces.IEventNotificationListener;
 
+//TASK 3-2 SMELL BETWEEN CLASSES
+//Code Smells
+//lazy class
+//to fix implament this in the next relevant class 
+
+
 /**
  *
  */
@@ -96,12 +102,12 @@ public class EventsScheduler {
         
     private static void notifyListeners(IEvent ev) {
         for (int i = 0; i < _listeners.size(); i++)
-            ((IEventNotificationListener)_listeners.get(i)).eventIsOccured(ev);
+            ((DefaultEventNotifier)_listeners.get(i)).eventIsOccured(ev);
     }
 
     private static void notifyChanged() {
         for (int i = 0; i < _listeners.size(); i++)
-            ((IEventNotificationListener)_listeners.get(i)).eventsChanged();
+            ((DefaultEventNotifier)_listeners.get(i)).eventsChanged();
     }
 
     private static Date getMidnight() {
